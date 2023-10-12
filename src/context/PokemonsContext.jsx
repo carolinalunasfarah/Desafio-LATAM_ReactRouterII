@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const PokemonsContext = createContext();
 
-const urlPoke = "https://pokeapi.co/api/v2/pokemon";
+const urlPoke = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=150";
 
 const PokemonsProvider = ({ children }) => {
     const [pokemons, setPokemons] = useState([]);
