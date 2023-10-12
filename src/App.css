@@ -9,35 +9,29 @@
     height: 3rem;
     display: flex;
 }
-
 .navBrand {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
-
 .navIcon {
     padding: 0.5rem;
     width: 3rem;
 }
-
 .navLinks {
     display: flex;
     width: 95%;
     justify-content: end;
 }
-
 .active,
 .inactive {
     text-decoration: none;
     font-size: 20px;
     padding-right: 1rem;
 }
-
 .active {
     color: rgb(233, 41, 41);
 }
-
 .inactive {
     color: black;
 }
@@ -50,7 +44,6 @@
     align-items: center;
     padding-top: 3rem;
 }
-
 .pikachuImg {
     height: 25rem;
     padding-top: 1rem;
@@ -64,10 +57,27 @@
     justify-content: center;
     align-items: center;
 }
-
 .pokemonsSelect {
     height: 2rem;
     width: 20rem;
     margin: 2rem 0rem;
 }
 
+/* Pokemon Card */
+.card {
+    margin: 2rem;
+    width: 25rem;
+}
+.pokemonCard {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.pokemonCardImg {
+    height: 12rem;
+    margin: 0.5rem;
+}
+.pokemonDetails {
+    text-align: start;
+    margin-left: 3rem;
+}

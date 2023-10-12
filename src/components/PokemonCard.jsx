@@ -11,23 +11,38 @@ const PokemonCard = ({ pokemon }) => {
 
     return (
         <>
-            <section>
-                <Card>
-                    <Card.Img src={src} />
-                    <Card.Body>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Text>
-                            {stats?.map((stat, i) => (
-                                <li key={i}>
-                                    {stat.name}: {stat.base}
-                                </li>
-                            ))}
-                        </Card.Text>
-                        <Card.Text>{types}</Card.Text>
-                    </Card.Body>
+            <section className="pokemonCard">
+                <Card className="card">
+                    <article>
+                        <Card.Img
+                            className="pokemonCardImg"
+                            src={src}
+                            alt={name}
+                        />
+                    </article>
+                    <article className="pokemonDetails">
+                        <Card.Body>
+                            <Card.Title className="text-capitalize">
+                                {name}
+                            </Card.Title>
+                            <Card.Text>
+                                {stats?.map((stat, i) => (
+                                    <li key={i}>
+                                        <strong className="text-capitalize">
+                                            {stat.name}
+                                        </strong>
+                                        : {stat.base}
+                                    </li>
+                                ))}
+                            </Card.Text>
+                            <Card.Text>{types}</Card.Text>
+                        </Card.Body>
+                    </article>
                 </Card>
-                <button onClick={handleClick}>Back to selection</button>
             </section>
+            <button className="btn btn-warning" onClick={handleClick}>
+                Back to selection
+            </button>
         </>
     );
 };
