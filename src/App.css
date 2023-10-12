@@ -1,6 +1,43 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 0;
     text-align: center;
+}
+
+/* Navigation */
+.navigation {
+    background-color: rgb(246, 207, 87);
+    height: 3rem;
+    display: flex;
+}
+
+.navBrand {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navIcon {
+    padding: 0.5rem;
+    width: 3rem;
+}
+
+.navLinks {
+    display: flex;
+    width: 95%;
+    justify-content: end;
+}
+
+.active,
+.inactive {
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 1rem;
+}
+
+.active {
+    color: rgb(233, 41, 41);
+}
+
+.inactive {
+    color: black;
 }
