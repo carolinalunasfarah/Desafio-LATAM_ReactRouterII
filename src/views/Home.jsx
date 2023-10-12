@@ -1,11 +1,10 @@
+import pikachuImg from "../assets/img/pikachu.svg";
+
 const Home = () => {
     return (
         <section>
             <h1>Welcome Pokemon Master</h1>
-            <img
-                src="pokeapi-project/src/assets/img/pikachu.svg"
-                alt="Pikachu image"
-            />
+            <img src={pikachuImg} alt="Pikachu image" />
         </section>
     );
 };

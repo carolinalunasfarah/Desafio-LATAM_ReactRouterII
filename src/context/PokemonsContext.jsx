@@ -1,19 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export const PokemonsContext = createContext();
 
-const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit={150}";
+const urlPoke = "https://pokeapi.co/api/v2/pokemon";
 
 const PokemonsProvider = ({ children }) => {
     const [pokemons, setPokemons] = useState([]);
-    const [selectedPokemons, setSelectedPokemons] = useState("");
-    const navigate = useNavigate();
 
     const getPokemons = async () => {
         try {
-            const response = await axios.get(url);
+            const response = await axios.get(urlPoke);
             if (!response.status) {
                 throw new Error("Data not found");
             }
@@ -21,12 +18,6 @@ const PokemonsProvider = ({ children }) => {
         } catch (error) {
             console.log(error.message);
         }
-    };
-
-    const pokemonDetails = async () => {
-        selectedPokemons
-            ? navigate(`/pokemons/${selectedPokemons}`)
-            : alert("Select a pokemon");
     };
 
     useEffect(() => {
@@ -38,8 +29,6 @@ const PokemonsProvider = ({ children }) => {
             value={{
                 pokemons,
                 setPokemons,
-                selectedPokemons,
-                setSelectedPokemons,
             }}>
             {children}
         </PokemonsContext.Provider>

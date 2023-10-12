@@ -1,18 +1,27 @@
-import { useContext } from "react";
-import { PokemonsContext } from "../context/PokemonContext";
+import { useContext, useState } from "react";
+import { PokemonsContext } from "../context/PokemonsContext";
+import { useNavigate } from "react-router-dom";
 
 const Pokemons = () => {
-    const { pokemons, selectedPokemons, setSelectedPokemons, setPokemons } =
+    const { pokemons, setPokemons } =
         useContext(PokemonsContext);
+    const [selectedPokemon, setSelectedPokemon] = useState("");
+    const navigate = useNavigate();
+
+    const goToDetails = async () => {
+        selectedPokemon
+        ? navigate (`/pokemons/${selectedPokemon}`)
+        : alert ("You must select a pokemon");
+    };
 
     return (
         <div>
             <h1>Select a Pokemon</h1>
             <section>
                 <select
-                    value={selectedPokemons}
+                    value={selectedPokemon}
                     onChange={({ target }) =>
-                        setSelectedPokemons(target.value)
+                        setSelectedPokemon(target.value)
                     }>
                     <option value="" disabled>
                         Pokemons
@@ -23,6 +32,7 @@ const Pokemons = () => {
                         </option>
                     ))}
                 </select>
+                <button onClick={goToDetails}>View Details</button>
             </section>
         </div>
     );
