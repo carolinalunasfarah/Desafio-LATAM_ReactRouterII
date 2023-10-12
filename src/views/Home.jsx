@@ -2,9 +2,9 @@ import pikachuImg from "../assets/img/pikachu.svg";
 
 const Home = () => {
     return (
-        <section>
+        <section className="home">
             <h1>Welcome Pokemon Master</h1>
-            <img src={pikachuImg} alt="Pikachu image" />
+            <img className="pikachuImg" src={pikachuImg} alt="Pikachu image" />
         </section>
     );
 };

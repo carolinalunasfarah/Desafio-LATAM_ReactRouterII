@@ -41,3 +41,17 @@
 .inactive {
     color: black;
 }
+
+/* Home */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.pikachuImg {
+    height: 25rem;
+    padding-top: 1rem;
+}
