@@ -3,15 +3,14 @@ import { PokemonsContext } from "../context/PokemonsContext";
 import { useNavigate } from "react-router-dom";
 
 const Pokemons = () => {
-    const { pokemons, setPokemons } =
+    const { pokemons, setPokemons, selectedPokemon, setSelectedPokemon } =
         useContext(PokemonsContext);
-    const [selectedPokemon, setSelectedPokemon] = useState("");
     const navigate = useNavigate();
 
     const goToDetails = async () => {
         selectedPokemon
-        ? navigate (`/pokemons/${selectedPokemon}`)
-        : alert ("You must select a pokemon");
+            ? navigate(`/pokemons/${selectedPokemon}`)
+            : alert("You must select a pokemon");
     };
 
     return (
@@ -20,9 +19,7 @@ const Pokemons = () => {
             <section>
                 <select
                     value={selectedPokemon}
-                    onChange={({ target }) =>
-                        setSelectedPokemon(target.value)
-                    }>
+                    onChange={({ target }) => setSelectedPokemon(target.value)}>
                     <option value="" disabled>
                         Pokemons
                     </option>

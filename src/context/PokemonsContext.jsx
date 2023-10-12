@@ -7,6 +7,7 @@ const urlPoke = "https://pokeapi.co/api/v2/pokemon";
 
 const PokemonsProvider = ({ children }) => {
     const [pokemons, setPokemons] = useState([]);
+    const [selectedPokemon, setSelectedPokemon] = useState("");
 
     const getPokemons = async () => {
         try {
@@ -14,7 +15,7 @@ const PokemonsProvider = ({ children }) => {
             if (!response.status) {
                 throw new Error("Data not found");
             }
-            setPokemons(response);
+            setPokemons(response.data.results);
         } catch (error) {
             console.log(error.message);
         }
@@ -29,6 +30,8 @@ const PokemonsProvider = ({ children }) => {
             value={{
                 pokemons,
                 setPokemons,
+                selectedPokemon,
+                setSelectedPokemon,
             }}>
             {children}
         </PokemonsContext.Provider>
