@@ -14,10 +14,11 @@ const Pokemons = () => {
     };
 
     return (
-        <div>
+        <div className="pokemons">
             <h1>Select a Pokemon</h1>
             <section>
                 <select
+                    className="pokemonsSelect"
                     value={selectedPokemon}
                     onChange={({ target }) => setSelectedPokemon(target.value)}>
                     <option value="" disabled>
@@ -29,7 +30,11 @@ const Pokemons = () => {
                         </option>
                     ))}
                 </select>
-                <button onClick={goToDetails}>View Details</button>
+                <article>
+                    <button className="btn btn-secondary" onClick={goToDetails}>
+                        View Details
+                    </button>
+                </article>
             </section>
         </div>
     );
