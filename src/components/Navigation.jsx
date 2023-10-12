@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Navbar } from "react-bootstrap/Navbar";
+import Navbar from "react-bootstrap/Navbar";
 
 const Navigation = () => {
     const activeClass = ({ isActive }) => (isActive ? "active" : undefined);

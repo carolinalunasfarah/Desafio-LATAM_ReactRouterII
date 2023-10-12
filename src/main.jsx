@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
-
-// bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import PokemonsProvider from "./context/PokemonContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <App />
+        <BrowserRouter>
+            <PokemonsProvider>
+                <App />
+            </PokemonsProvider>
+        </BrowserRouter>
     </React.StrictMode>
 );
