@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { PokemonsContext } from "../context/PokemonsContext";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Pokemons = () => {
     const { pokemons, setPokemons, selectedPokemon, setSelectedPokemon } =
@@ -10,7 +11,7 @@ const Pokemons = () => {
     const goToDetails = async () => {
         selectedPokemon
             ? navigate(`/pokemons/${selectedPokemon}`)
-            : alert("You must select a pokemon");
+            : Swal.fire("You must select a Pokemon");
     };
 
     return (
