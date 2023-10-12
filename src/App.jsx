@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Home from "./views/Home";
 import Pokemons from "./views/Pokemons";
 import PokemonDetails from "./views/PokemonDetails";
+import NotFound from "./views/NotFound";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                         path="/pokemons/:name"
                         element={<PokemonDetails />}
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </>
